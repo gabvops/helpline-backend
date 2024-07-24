@@ -1,21 +1,21 @@
 [
   {
-    titulo: 'Node.js',
+    titulo: 'Desktop não liga',
     createdAt: new Date(),
     updatedAt: new Date(),
   },
   {
-    titulo: 'Java',
+    titulo: 'Solicitação de acessos',
     createdAt: new Date(),
     updatedAt: new Date(),
   },
   {
-    titulo: 'Python',
+    titulo: 'Periférico com problema',
     createdAt: new Date(),
     updatedAt: new Date(),
   },
   {
-    titulo: 'C#',
+    titulo: 'Outros assuntos de Tecnologia',
     createdAt: new Date(),
     updatedAt: new Date(),
   },
