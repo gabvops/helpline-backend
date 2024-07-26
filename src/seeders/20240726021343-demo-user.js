@@ -10,7 +10,7 @@ module.exports = {
         lastname: 'Mendes',
         ativo: true,
         email: 'gabrielmendes@email.com',
-        cpf: '43936715890',
+        cpf: '77777777777',
         role: 'administrator',
         createdAt: new Date(),
         updatedAt: new Date(),
