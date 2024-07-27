@@ -1,0 +1,9 @@
+docker exec -it helpline-backend-db-1 mysql -uroot -p
+
+CREATE USER 'helproot'@'%' IDENTIFIED BY 'Help@123';
+
+-- Conceder permissões ao banco de dados
+GRANT ALL PRIVILEGES ON helplinedb.* TO 'helproot'@'%';
+
+-- Aplicar as mudanças
+FLUSH PRIVILEGES;
