@@ -1,7 +1,5 @@
 'use strict';
-const {
-  Model
-} = require('sequelize');
+const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Users extends Model {
     /**
@@ -14,17 +12,59 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Users.init({
-    user: DataTypes.STRING,
-    name: DataTypes.STRING,
-    lastname: DataTypes.STRING,
-    ativo: DataTypes.BOOLEAN,
-    email: DataTypes.STRING,
-    cpf: DataTypes.STRING,
-    role: DataTypes.STRING
+    user: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    lastname: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    status: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: true
+    },
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+      validate: {
+        isEmail: true
+      }
+    },
+    personalId: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true
+    },
+    role: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    createdAt: {
+      type: DataTypes.DATE,
+      defaultValue: DataTypes.NOW,
+      allowNull: false
+    },
+    updatedAt: {
+      type: DataTypes.DATE,
+      defaultValue: DataTypes.NOW,
+      allowNull: false
+    }
   }, {
     sequelize,
     modelName: 'Users',
-    tableName: "users"
+    tableName: 'users',
+    timestamps: true,
+    hooks: {
+      beforeUpdate: (user) => {
+        user.updatedAt = new Date();
+      }
+    }
   });
   return Users;
 };
