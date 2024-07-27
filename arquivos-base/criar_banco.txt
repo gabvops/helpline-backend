@@ -1,3 +1,5 @@
+docker-compose up -d
+
 docker exec -it helpline-backend-db-1 mysql -uroot -p
 
 CREATE USER 'helproot'@'%' IDENTIFIED BY 'Help@123';
