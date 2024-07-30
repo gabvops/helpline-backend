@@ -18,13 +18,13 @@ module.exports = {
       lastname: {
         type: Sequelize.STRING
       },
-      ativo: {
+      active: {
         type: Sequelize.BOOLEAN
       },
       email: {
         type: Sequelize.STRING
       },
-      cpf: {
+      personal_id: {
         type: Sequelize.STRING
       },
       role: {
