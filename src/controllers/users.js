@@ -3,10 +3,10 @@ const UserServices = require('../services/UserServices.js');
 
 const userServices = new UserServices();
 
-class UsersController extends Controller {
+class UserController extends Controller {
     constructor () {
         super(userServices);
     }
 }
 
-module.exports = UsersController;
+module.exports = UserController;
